@@ -1,2 +1,7 @@
 export type VoteType = "good" | "neutral" | "bad";
-export type VoteState = Record<VoteType, number>;
+
+export interface Votes {
+  good: number;
+  neutral: number;
+  bad: number;
+}

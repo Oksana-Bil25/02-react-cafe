@@ -1,15 +1,9 @@
-// src/components/VoteStats/VoteStats.tsx
-
 import React from "react";
 import css from "./VoteStats.module.css";
+import type { Votes } from "../../types/votes";
 
-// Інтерфейс для пропсів
 interface VoteStatsProps {
-  votes: {
-    good: number;
-    neutral: number;
-    bad: number;
-  };
+  votes: Votes;
   totalVotes: number;
   positiveRate: number;
 }
@@ -36,7 +30,7 @@ const VoteStats: React.FC<VoteStatsProps> = ({
           Total: <span className={css.value}>{totalVotes}</span>
         </li>
         <li className={css.item}>
-          Positive Feedback: <span className={css.value}>{positiveRate}%</span>
+          Positive: <span className={css.value}>{positiveRate}%</span>
         </li>
       </ul>
     </div>

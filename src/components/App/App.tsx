@@ -7,16 +7,17 @@ import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
 import Notification from "../Notification/Notification";
 
-import type { VoteType } from "../../types/votes.ts";
+import type { VoteType, Votes } from "../../types/votes";
 
-const INITIAL_VOTES = {
+const INITIAL_VOTES: Votes = {
   good: 0,
   neutral: 0,
   bad: 0,
 };
 
 const App: React.FC = () => {
-  const [votes, setVotes] = useState(INITIAL_VOTES);
+  // Явно вказуємо тип стану
+  const [votes, setVotes] = useState<Votes>(INITIAL_VOTES);
 
   const handleVote = (type: VoteType) => {
     setVotes((prevVotes) => ({
